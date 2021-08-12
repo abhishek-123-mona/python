@@ -3,7 +3,7 @@
 # print("Shivani love❤with==>",name)
 # print("age aur jan na hai")
 # name1=('pres any button👍')
-# print('chal hat bahan ki lodi',name1)
+# print('chal hat  ',name1)
 
 
 # this is list type ......................

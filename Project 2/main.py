@@ -1,7 +1,9 @@
+from os import write
 import random
 randNumber = random.randint(1, 100)
 userGuess = None
 guesses = 0
+print(randNumber)
 
 while(userGuess != randNumber):
     userGuess = int(input("Enter your guess: "))
@@ -16,13 +18,16 @@ while(userGuess != randNumber):
 
 print(f"You guessed the number in {guesses} guesses")
 with open("hiscore.txt", "r") as f:
-    hiscore = int(f.read())
-
-if(guesses<hiscore):
-    print("You have just broken the high score!")
+    hiscore = f.read()
+if(hiscore==""):
+    print("new highscore")   
+    with open("hiscore.txt","w") as f:
+        f.write(str(guesses))
+elif(guesses<int(hiscore)):
+    print("You have just broken the high score!{hiscore}")
     with open("hiscore.txt", "w") as f:
         f.write(str(guesses))
-
+    print(f"your high score{guesses}")
 
 # import random
 # randNumber=random.randint(1,100)
